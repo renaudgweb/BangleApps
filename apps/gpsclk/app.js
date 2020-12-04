@@ -17,12 +17,12 @@ require("Font7x11Numeric7Seg").add(Graphics);
 const storage = require('Storage');
 const locale = require('locale');
 let coords;
-let timer;
+let timer = null;
 let fix;
 const xyCenter = g.getWidth()/2;
 
 function drawTime(){
-  let d    = new Date();
+  let d = new Date();
   let da = d.toString().split(" ");
   let date = locale.dow(d,1)+" "+locale.date(d,1);
   let time = da[4].split(":");
@@ -75,7 +75,7 @@ function getGpsFix(){
   Bangle.on('GPS', function(fix) {
     g.clearRect(0,100,240,200);
     if (fix.fix) {
-      let gpsString = `lat: ${fix.lat.toFixed(6)} \nlon: ${fix.lon.toFixed(6)} alt: ${fix.alt}`;
+      let gpsString = `lat: ${fix.lat.toFixed(6)}° \nlon: ${fix.lon.toFixed(6)}° \nalt: ${fix.alt} M`;
       coords.lat = fix.lat.toFixed(6);
       coords.lon = fix.lon.toFixed(6);
       coords.alt = fix.alt;
@@ -87,10 +87,9 @@ function getGpsFix(){
       g.drawString("Got GPS fix",xyCenter,115);
       g.setColor(1,1,1);
       g.setFont("Vector",15);
-      g.drawString(gpsString,xyCenter,125);
-      g.drawString("Swipe right to return",xyCenter,135);
+      g.drawString(gpsString,xyCenter,135);
+      g.drawString("Swipe right to return",xyCenter,185);
       clearInterval(timer);
-      timer = undefined;
     }
     else {
       g.setColor(1,0,0);
@@ -196,7 +195,7 @@ function setButtons(){
       // Swipe right (1)
       case -1:
         if (timer) clearInterval(timer);
-        timer = undefined;
+        timer = null;
         Bangle.setGPSPower(0);
         g.clearRect(0,24,240,200);
         start();
