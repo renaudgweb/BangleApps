@@ -149,9 +149,15 @@ function drawTime(){
 function setGpsTime(){
   Bangle.setGPSPower(1);
   Bangle.on('GPS',function(fix) {
+<<<<<<< HEAD
 	  if (fix.fix) {
 		var curTime = fix.time.getTime()/1000;
 		setTime(curTime);
+=======
+    if (fix.fix) {
+    var curTime = fix.time.getTime()/1000;
+    setTime(curTime);
+>>>>>>> upstream/master
         Bangle.setGPSPower(0);
         Bangle.buzz(100, 1);
         start();

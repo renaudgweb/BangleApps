@@ -2,11 +2,19 @@ var menuItems = {
   "":{title:"GPS POI Log"},
   " ":{value:"No Fix"},
   "Tree" : ()=>addItem("Tree"),
+<<<<<<< HEAD
   "Plant" : ()=>addItem("Plant"),
   "Bus Stop" : ()=>addItem("Bus Stop"),
   "Viewpoint" : ()=>addItem("Viewpoint"),
   "Dinking Water" : ()=>addItem("Water"),
   "P.O.I." : ()=>addItem("POI N/D")
+=======
+  "Gate" : ()=>addItem("Gate"),
+  "Flower" : ()=>addItem("Flower"),
+  "Plant" : ()=>addItem("Plant"),
+  "Bus Stop" : ()=>addItem("Bus Stop"),
+  "Pub" : ()=>addItem("Pub")
+>>>>>>> upstream/master
 };
 
 var menu = E.showMenu(menuItems);
