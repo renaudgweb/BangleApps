@@ -50,14 +50,14 @@ if (camShot) {
     Bangle.on('aiGesture', (v) => {
     switch (v) {
       case 'swipeleft':
-        E.showMessage('next');
+        E.showMessage('camShot !');
         setTimeout(drawApp, 1000);
-        next(() => {});
+        camShot(() => {});
         break;
       case 'swiperight':
-        E.showMessage('prev');
+        E.showMessage('camShot !');
         setTimeout(drawApp, 1000);
-        prev(() => {});
+        camShot(() => {});
         break;
     }
   });
