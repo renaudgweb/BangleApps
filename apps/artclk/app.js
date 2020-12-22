@@ -167,7 +167,7 @@ function heartRate(){
     g.setColor(0xF800);
     g.drawImage(logoHeart, 10, 220);
     g.setColor("#ffffff");
-    g.drawString(hrm ? bpm+" BPM ("+confidence+")" : "---", xyCenter, 230);
+    g.drawString(hrm ? bpm+" BPM - "+confidence+"%" : "---", xyCenter, 230);
   });
 }
 
