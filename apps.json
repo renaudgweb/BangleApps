@@ -104,16 +104,16 @@
       {"name":"swlclk.img","url":"app-icon.js","evaluate":true}
     ]
   },
-  { "id": "gnss",
-    "name": "GNSS",
-    "shortName": "GNSS",
+  { "id": "nmea",
+    "name": "NMEA",
+    "shortName": "NMEA",
     "icon": "app.png",
     "version":"0.01",
-    "description": "GNSS Terminal App display raw infos about gnss",
+    "description": "Terminal App display raw NMEA frames from GNSS",
     "tags": "tool,gps,outdoors",
     "storage": [
-      {"name":"gnss.app.js","url":"app.js"},
-      {"name":"gnss.img","url":"app-icon.js","evaluate":true}
+      {"name":"nmea.app.js","url":"app.js"},
+      {"name":"nmea.img","url":"app-icon.js","evaluate":true}
     ]
   },
   { "id": "artclk",
